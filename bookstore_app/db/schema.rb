@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_15_151234) do
+ActiveRecord::Schema.define(version: 2019_02_15_184148) do
+
+  create_table "authors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "Fname"
+    t.string "Lname"
+    t.text "Bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "Title"
@@ -18,6 +26,34 @@ ActiveRecord::Schema.define(version: 2019_02_15_151234) do
     t.string "Book_id"
     t.string "Publisher"
     t.text "Description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "Name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "novels", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "Title"
+    t.integer "Genre_id"
+    t.integer "Author_id"
+    t.integer "Publisher_id"
+    t.string "isbn"
+    t.float "Price"
+    t.date "Publication"
+    t.string "Format"
+    t.text "Description"
+    t.integer "Pages"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "publishers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "Name"
+    t.string "Country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
