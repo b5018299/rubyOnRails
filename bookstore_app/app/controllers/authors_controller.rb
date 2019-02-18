@@ -26,6 +26,15 @@ class AuthorsController < ApplicationController
 	end
 
 	#
+	def search
+		@authors = if params[:term]
+			Author.where('Fname LIKE ? or Lname LIKE ?', "%#{params[:term]}", "%#{params[:term]}")
+		else
+			Author.all
+		end
+	end
+
+	#
 	private
 	def author_params
 		params.require(:author).permit(:Fname, :Lname, :Bio)

@@ -1,4 +1,11 @@
 <div class="container">
+
+	<%= form_tag search_novels_path, method: :get do %>
+		<%= text_field_tag :term, nil, placeholder: 'Search',
+		class:'form-control' %>
+		<%= submit_tag "Submit", class:'btn btn-default' %>
+ 	<% end %>
+
 	<h2>Novels</h2>
 	<table border="1" class="table">
 		<tr>

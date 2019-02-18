@@ -48,7 +48,7 @@ class NovelsController < ApplicationController
 
 	def search
 		@novels = if params[:term]
-			Novel.where('Title LIKE ?', "%#{params[:term]}")
+			Novel.where('Title LIKE ? or Format LIKE ?', "%#{params[:term]}", "%#{params[:term]}")
 		else
 			Novel.all
 		end

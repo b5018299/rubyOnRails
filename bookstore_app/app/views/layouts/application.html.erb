@@ -24,9 +24,9 @@
             books_path %> </a>
 
             <a class="p-2 text-dark" href="#"> <%= link_to 'Add Novel',
-            new_novel_path %> </a>
-            <a class="p-2 text-dark" href="#"> <%= link_to 'Show All Books',
-            novel_index_path %> </a>
+            novels_new_path %> </a>
+            <a class="p-2 text-dark" href="#"> <%= link_to 'Show All Novels',
+            novels_index_path %> </a>
 
             <a class="p-2 text-dark" href="#"> <%= link_to 'Add Author',
             new_author_path %> </a>
@@ -36,6 +36,11 @@
 
             <a class="p-2 text-dark" href="#"> <%= link_to 'Add Publisher',
             new_publisher_path %> </a>
+
+            <!--
+              <a class="p-2 text-dark" href="#"> <%= link_to 'Link to Search Page??',
+              search_novels_path %> </a> 
+            -->
           </nav>
         </div>
         <%= yield %>
