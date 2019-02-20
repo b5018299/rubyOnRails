@@ -2,11 +2,12 @@
 
 	<%= form_tag search_novels_path, method: :get do %>
 		<%= text_field_tag :term, nil, placeholder: 'Search',
-		class:'form-control' %>
-		<%= submit_tag "Submit", class:'btn btn-default' %>
+		class:'form-control search-box' %>
+		<%= submit_tag "Search", class:'btn btn-primary search-btn' %>
  	<% end %>
 
 	<h2>Novels</h2>
+		<%=link_to "Add a Novel", novels_new_path, class:'btn btn-default add-text-btn' %>
 	<table border="1" class="table">
 		<tr>
 			<th>Title<hd>
